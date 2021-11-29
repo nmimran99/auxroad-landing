@@ -61,8 +61,7 @@ export default function Institutions() {
 						the main interests are to create better branding and growing the
 						businness&apos; engagement. Money and manpower are to be invested in
 						order to increase reach to appealing services for students and in
-						turn, grow interest among future students. auxroad offers access to
-						various services and mediums to achieve that goal.
+						turn, grow interest among future students.
 					</div>
 					<div className="py-2 text-base font-medium">
 						auxroad offers access to various services and mediums to achieve
