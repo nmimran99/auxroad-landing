@@ -3,24 +3,23 @@ import { useState } from "react";
 export default function EmailInput({ border, content, textColor }) {
 	const [email, setEmail] = useState("");
 
-	const handleSend = () => {
+	const handleSend = async () => {
 		if (!email) return;
-		fetch("/api/contact", {
+		const response = await fetch("/api/contact", {
 			method: "POST",
+			body: JSON.stringify({ email: email }),
 			headers: {
-				Accept: "application/json, text/plain, */*",
 				"Content-Type": "application/json",
 			},
-			body: JSON.stringify({ email }),
-		}).then((res) => {
-			if (res.status === 200) {
-				setEmail("");
-				document.getElementById("snackbar").classList.remove("hidden");
-				setTimeout(() => {
-					document.getElementById("snackbar").classList.add("hidden");
-				}, 4000);
-			}
 		});
+		const res = await response.json();
+		if (res.status === 200) {
+			setEmail("");
+			document.getElementById("snackbar").classList.remove("hidden");
+			setTimeout(() => {
+				document.getElementById("snackbar").classList.add("hidden");
+			}, 4000);
+		}
 	};
 
 	return (
