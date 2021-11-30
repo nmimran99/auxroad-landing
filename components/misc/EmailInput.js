@@ -5,14 +5,13 @@ export default function EmailInput({ border, content, textColor }) {
 
 	const handleSend = async () => {
 		if (!email) return;
-		const response = await fetch("/api/contact", {
+		const res = await fetch("/api/contact", {
 			method: "POST",
 			body: JSON.stringify({ email: email }),
 			headers: {
 				"Content-Type": "application/json",
 			},
 		});
-		const res = await response.json();
 		if (res.status === 200) {
 			setEmail("");
 			document.getElementById("snackbar").classList.remove("hidden");
