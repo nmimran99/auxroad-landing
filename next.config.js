@@ -1,4 +1,4 @@
-export default {
+module.exports = {
 	reactStrictMode: true,
 	env: {
 		MONGODB_URI:

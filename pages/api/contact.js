@@ -1,5 +1,5 @@
 import Contact from "../../schemas/contact.js";
-import dbConnect from "../../schemas/dbConnect.js";
+import dbConnect from "../../utils/dbConnect";
 
 export default async function addContact(req, res) {
 	await dbConnect();
