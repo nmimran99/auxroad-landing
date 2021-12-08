@@ -32,7 +32,7 @@ export default function Top() {
 						"
 					>
 						auxroad exposes you to the best opportunities and deals on the
-						market so you can concetrate on what truely matters
+						market so you can concetrate on what truly matters
 					</div>
 					<div
 						className="p-4 
